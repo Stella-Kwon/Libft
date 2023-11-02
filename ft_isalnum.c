@@ -6,12 +6,12 @@
 /*   By: skwon2 <skwon2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:23:01 by skwon2            #+#    #+#             */
-/*   Updated: 2023/11/02 11:40:13 by skwon2           ###   ########.fr       */
+/*   Updated: 2023/11/02 12:27:47 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+ #include <ctype.h>
 // int ft_isalnum(int c)
 // {
 //     if (ft_isalpha(c) != 0 || ft_isdigit(c) != 0)
@@ -26,11 +26,11 @@ int ft_isalnum(int c)
     return (ft_isalpha(c) || ft_isdigit(c));
 }
     
-int main(void)
-{
-    printf("if there is any characters return number other than 0 : %d\n", ft_isalnum('d'));
-    printf("if there is any characters return number other than 0 : %d\n", ft_isalnum(1));
-    printf("if there is any characters return number other than 0 : %d\n", ft_isalnum('8'));
-    printf("if there is any characters return number other than 0 : %d\n", ft_isalnum('5'));
-    return 0;
-}
+// int main(void)
+// {
+//     printf("if there is any characters return number other than 0 : %d\n", ft_isalnum('d'));
+//     printf("if there is any characters return number other than 0 : %d\n", isalnum(1));
+//     printf("if there is any characters return number other than 0 : %d\n", isalnum('d'));
+//     printf("if there is any characters return number other than 0 : %d\n", ft_isalnum('5'));
+//     return 0;
+// }
