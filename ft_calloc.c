@@ -6,7 +6,7 @@
 /*   By: suminkwon <suminkwon@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:25:20 by suminkwon         #+#    #+#             */
-/*   Updated: 2023/11/24 13:34:39 by suminkwon        ###   ########.fr       */
+/*   Updated: 2023/11/24 13:41:40 by suminkwon        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,19 @@ void	*calloc(size_t num_elements, size_t element_size)
 		return (0);
 	ft_bzero (ptr,num_elements * element_size);
 	return (ptr);
+}
+
+int	main(void)
+{
+	size_t	num_e;
+	size_t	size_e;
+	int	*arr;
+
+	num_e = 5;
+	size_e = sizeof(int);
+	arr = (int *)calloc(num_e, size_e);
+	for (size_t i = 0; i < num_e; i++)
+		printf("%d ", arr[i]);
+	free(arr);
+	return (0);
 }
