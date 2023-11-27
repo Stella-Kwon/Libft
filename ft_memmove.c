@@ -29,7 +29,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
 	}
 	else
-		ft_memcpy(dst,src,len);
+		ft_memcpy(dst, src, len);
 	return (dst);
 }
 

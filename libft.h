@@ -6,14 +6,13 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 13:02:16 by suminkwon         #+#    #+#             */
-/*   Updated: 2023/11/27 11:11:18 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/11/27 11:39:20 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
-
-#include<stdio.h>
+# define LIBFT_H
+# include <stdio.h>
 
 size_t	ft_strlen(const char *s);
 int		ft_isalnum(int c);

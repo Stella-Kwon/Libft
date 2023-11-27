@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suminkwon <suminkwon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:25:20 by suminkwon         #+#    #+#             */
-/*   Updated: 2023/11/24 13:41:40 by suminkwon        ###   ########.fr       */
+/*   Updated: 2023/11/27 11:36:38 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	*calloc(size_t num_elements, size_t element_size)
 {
 	void	*ptr;
 
-    ptr = (void *)malloc(num_elements * element_size);
+	ptr = (void *)malloc(num_elements * element_size);
 	if (!ptr)
 		return (0);
-	ft_bzero (ptr,num_elements * element_size);
+	ft_bzero (ptr, num_elements * element_size);
 	return (ptr);
 }
 

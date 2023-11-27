@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suminkwon <suminkwon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:23:01 by skwon2            #+#    #+#             */
-/*   Updated: 2023/11/13 07:19:49 by suminkwon        ###   ########.fr       */
+/*   Updated: 2023/11/27 11:36:51 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 
 //esier way and boolean way, it was returning 1 even if the return value was set to 'c'value. 
 // but the original function should return 1 if it is true so changed all the function to return 1 when it is true.
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    return (ft_isalpha(c) || ft_isdigit(c));
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
     
 // int main(void)
