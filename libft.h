@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 13:02:16 by suminkwon         #+#    #+#             */
-/*   Updated: 2023/11/28 09:59:34 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/11/28 10:09:24 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,6 @@ char	*ft_strrchr(const char *str, int character);
 char	*ft_strdup(const char *str);
 char	*ft_strchr(const char *str, int character);
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+
 #endif
