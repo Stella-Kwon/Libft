@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 22:46:08 by suminkwon         #+#    #+#             */
-/*   Updated: 2023/11/27 11:44:06 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/11/28 10:05:12 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+
 #include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
