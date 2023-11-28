@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 07:23:38 by suminkwon         #+#    #+#             */
-/*   Updated: 2023/11/27 14:07:17 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/11/28 15:44:50 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	//     fprintf(stderr, "error: 'ft_memcpy' will always overflow; destination buffer has size %zu, but size argument is %zu\\n", sizeof(dst), n);
 	//     exit(EXIT_FAILURE);
 	// } this is just for showing an error message in console
+	if (n > ft_strlen(dst))
+		return(NULL);
 	while (++i < n)
 		*(unsigned char *)(dst + i) = *(unsigned char *)(src + i);
 	return (dst);
@@ -33,7 +35,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 // {
 //     char dst[] = "hello";
 //     // char *src = dst + 1;
-//     char src[] = "min";
+//     char src[] = "minnnnn";
 //     printf("%s\n", dst);
 //     printf("%lu\n",sizeof(dst));
 //     printf("%s\n",src);
