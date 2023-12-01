@@ -6,7 +6,7 @@
 /*   By: skwon2 <skwon2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 11:18:45 by sukwon            #+#    #+#             */
-/*   Updated: 2023/12/01 19:10:41 by skwon2           ###   ########.fr       */
+/*   Updated: 2023/12/01 19:29:40 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,54 @@
 // 	return (res);
 // }
 
+// #include "libft.h"
+
+// static int	find_set(char c, char const *set)
+// {
+// 	while (*set)
+// 	{
+// 		if (c == *set)
+// 			return (1);
+// 		set++;
+// 	}
+// 	return (0);
+// }
+
+// char	*ft_strtrim(char const *s1, char const *set)
+// {
+// 	size_t	len;
+// 	char	*temp;
+// 	char	*start;
+// 	char	*end;
+
+// 	if (!s1)
+// 		return (NULL);
+// 	if (!set)
+// 		return ((char *)s1);
+// 	printf("hello\n");
+// 	start = (char *)s1;
+// 	end = start + ft_strlen(s1) - 1;
+// 	while (*start && find_set(*start, set))
+// 		start++;
+// 	printf("start : %c\n" , *start);
+// 	if (*start == '\0')
+// 		return (ft_strdup(""));
+// 	while (*end && find_set(*end, set))
+// 		end--;
+// 	len = end - start + 1;
+// 	temp = (char *)malloc(sizeof(char) * len + 1);
+// 	if (!temp)
+// 		return (NULL);
+// 	ft_strlcpy(temp, start, len);
+// 	return (temp);
+// }
 #include "libft.h"
 
-static int	find_set(char c, char const *set)
+static int	ft_inset(char const *set, char const c)
 {
 	while (*set)
 	{
-		if (c == *set)
+		if (*set == c)
 			return (1);
 		set++;
 	}
@@ -114,34 +155,32 @@ static int	find_set(char c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len;
-	char	*temp;
-	char	*start;
-	char	*end;
+	char	*str;
+	size_t	i;
+	size_t	start;
+	size_t	end;
 
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
-	if (!set)
-		return ((char *)s1);
-	start = (char *)s1;
-	end = start + ft_strlen(s1) - 1;
-	while (*start && find_set(*start, set))
+	start = 0;
+	while (s1[start] && ft_inset(set, s1[start]))
 		start++;
-	if (*start == '\0')
-		return (ft_strdup(""));
-	while (*end && find_set(*end, set))
+	end = ft_strlen(s1);
+	while (end > start && ft_inset(set, s1[end - 1]))
 		end--;
-	len = end - start + 1;
-	temp = (char *)malloc(sizeof(char) * len + 1);
-	if (!temp)
+	str = (char *)malloc(sizeof(*s1) * (end - start + 1));
+	if (!str)
 		return (NULL);
-	ft_strlcpy(temp, start, len);
-	return (temp);
+	i = 0;
+	while (start < end)
+		str[i++] = s1[start++];
+	str[i] = 0;
+	return (str);
 }
 
 int main(void)
 {
-	char const *s1 = "Hello, my nallme is ella.";
+	char const s1[] = "Hello, my nallme is ella.";
 	char const *set = "ll";
 	char *res = ft_strtrim(s1, set);
 	printf("%s", res);
