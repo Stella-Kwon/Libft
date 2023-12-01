@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 07:23:38 by suminkwon         #+#    #+#             */
-/*   Updated: 2023/11/28 15:44:50 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/11/30 12:09:58 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,19 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-// int main(void)
-// {
-//     char dst[] = "hello";
-//     // char *src = dst + 1;
-//     char src[] = "minnnnn";
-//     printf("%s\n", dst);
-//     printf("%lu\n",sizeof(dst));
-//     printf("%s\n",src);
-//     // printf("%lu\n",sizeof(src));//포인터이기 때문에 8바이트나오지만
-// 	// printf("%s\n", memcpy(dst,src,7));//여기서는 src가 가리키는 메모리에서 5바이트를 dst복사하는것 : 단순히 메모리르 복사하기때문에 무관.
-//     char *res = (char *)ft_memcpy(dst,src,7);
-// 	printf("%s\n",res);
-
+int main(void)
+{
+    char dst[] = "hello";
+	char *src = dst + 1;
+    // char src[] = "minn";
+    printf("%s\n", dst);
+    printf("%lu\n",sizeof(dst));
+    printf("%s\n",src);
+    // printf("%lu\n",sizeof(src));//포인터이기 때문에 8바이트나오지만
+	// printf("%s\n", memcpy(dst,src,7));//여기서는 src가 가리키는 메모리에서 5바이트를 dst복사하는것 : 단순히 메모리르 복사하기때문에 무관.
+    char *res = (char *)ft_memcpy(dst,src,5);
+	printf("%s\n",res);
+	printf("%c\n",res[4]);
 // 	//int로 구현할때
 // 	//int dst[5] = {18, 5, 5, 6, 1};
 //     // int *src = dst + 1;
@@ -52,8 +52,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 //     //     printf("%d ", dst[i]);
 //     // }
 //     // printf("\n");
-//     return 0;
-// }
+    return 0;
+}
 
 
 

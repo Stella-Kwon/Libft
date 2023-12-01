@@ -6,14 +6,14 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:38:31 by sukwon            #+#    #+#             */
-/*   Updated: 2023/11/28 15:46:50 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/01 11:12:43 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	dstlen;
@@ -23,13 +23,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dstlen = ft_strlen(dst);
 	srclen = ft_strlen(src);
 	// printf("sizeof(dst) : %lu\n", sizeof(dst));
-	if (size == 0)
+	if (dstsize == 0)
 		return (srclen);
-	if (size < dstlen -1)
-		return (srclen + size);
-	if (size >= dstlen -1)
+	if (dstsize < dstlen -1)
+		return (srclen + dstsize);
+	if (dstsize >= dstlen -1)
 	{
-		while (i < (size - dstlen - 1))
+		while (i < (dstsize - dstlen - 1))
 		{
 			dst[dstlen + i] = src[i];
 			i++;
@@ -60,25 +60,25 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 // 	return (dstlen + srclen);
 // }
 
-int main() {
-	char destination[20] = "hello, ";
-	char ft_destination[20] = "hello, ";
-	const char *source = "wrd!";
+// int main() {
+// 	char destination[20] = "hello, ";
+// 	char ft_destination[20] = "hello, ";
+// 	const char *source = "wrd!";
 	
-	printf("before_ft: lenth of dest String: %lu\n", strlen(ft_destination));
-	printf("before: lenth of dest String: %lu\n\n", strlen(destination));
+// 	printf("before_ft: lenth of dest String: %lu\n", strlen(ft_destination));
+// 	printf("before: lenth of dest String: %lu\n\n", strlen(destination));
 
-	size_t concatenated_length = strlcat(destination, source, 10);
-	size_t concatenated_length1 = ft_strlcat(ft_destination, source, 10);
+// 	size_t concatenated_length = strlcat(destination, source, 10);
+// 	size_t concatenated_length1 = ft_strlcat(ft_destination, source, 10);
 
 	
-	printf("after_Ft: lenth of dest String: %lu\n", strlen(ft_destination));
-	printf("after: lenth of dest String: %lu\n\n", strlen(destination));
+// 	printf("after_Ft: lenth of dest String: %lu\n", strlen(ft_destination));
+// 	printf("after: lenth of dest String: %lu\n\n", strlen(destination));
 	
-	printf("ft_Concatenated String: %s\n", ft_destination);
-	printf("Concatenated String: %s\n\n", destination);
+// 	printf("ft_Concatenated String: %s\n", ft_destination);
+// 	printf("Concatenated String: %s\n\n", destination);
 	
-	printf("ft_ :::Length of Concatenated String: %zu\n", concatenated_length1);
-	printf("Length of Concatenated String: %zu\n", concatenated_length);
-	return 0;
-}
+// 	printf("ft_ :::Length of Concatenated String: %zu\n", concatenated_length1);
+// 	printf("Length of Concatenated String: %zu\n", concatenated_length);
+// 	return 0;
+// }

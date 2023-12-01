@@ -6,21 +6,21 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:25:20 by suminkwon         #+#    #+#             */
-/*   Updated: 2023/11/27 11:36:38 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/11/30 11:33:17 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	*calloc(size_t num_elements, size_t element_size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
-	ptr = (void *)malloc(num_elements * element_size);
+	ptr = (void *)malloc(count * size);
 	if (!ptr)
 		return (0);
-	ft_bzero (ptr, num_elements * element_size);
+	ft_bzero (ptr, count * size);
 	return (ptr);
 }
 

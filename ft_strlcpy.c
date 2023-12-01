@@ -6,22 +6,22 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 18:14:49 by sukwon            #+#    #+#             */
-/*   Updated: 2023/11/28 19:15:03 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/01 11:12:34 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	srclen;
 	size_t	i;
 
 	srclen = ft_strlen(src);
 	i = 0;
-	if (size == 0)
+	if (dstsize == 0)
 		return (srclen);
-	while (i < size - 1 && *src)
+	while (i < dstsize - 1 && *src)
 	{
 		dst[i] = src[i];
 		i++;
@@ -29,14 +29,14 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (srclen);
 }
-int main() {
-    char destination[10] = "you";
-    const char *source = "to to toto toto";
+// int main() {
+//     char destination[10] = "you";
+//     const char *source = "to to toto toto";
 
-    size_t copied_length = ft_strlcpy(destination, source, 0);
+//     size_t copied_length = ft_strlcpy(destination, source, 0);
 
-    printf("Copied String: %s\n", destination);
-    printf("Length of Copied String: %zu\n", copied_length);
+//     printf("Copied String: %s\n", destination);
+//     printf("Length of Copied String: %zu\n", copied_length);
 
-    return 0;
-}
+//     return 0;
+// }
