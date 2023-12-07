@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:52:35 by sukwon            #+#    #+#             */
-/*   Updated: 2023/11/30 11:38:44 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/07 12:37:22 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,19 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-int main() 
-{
-	char s1[] = "Hello";
-	char s2[] = "Hellc";
-	int result = ft_strncmp(s1, s2, 5);
+// int main() 
+// {
+// 	char s1[] = "Hello";
+// 	char s2[] = "Hellc";
+// 	int result = ft_strncmp(s1, s2, 5);
 
-	if (result == 0) {
-		printf("Both strings are equal.\n");
-	} else if (result < 0) {
-		printf("s1 is less than s2. : %d \n", result);
-	} else {
-		printf("s1 is greater than s2: %d \n", result);
-	}
+// 	if (result == 0) {
+// 		printf("Both strings are equal.\n");
+// 	} else if (result < 0) {
+// 		printf("s1 is less than s2. : %d \n", result);
+// 	} else {
+// 		printf("s1 is greater than s2: %d \n", result);
+// 	}
 
-	return 0;
-}
+// 	return 0;
+// }

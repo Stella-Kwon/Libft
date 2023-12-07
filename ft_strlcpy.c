@@ -6,12 +6,13 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 18:14:49 by sukwon            #+#    #+#             */
-/*   Updated: 2023/12/01 11:12:34 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/02 13:03:23 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
+
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	srclen;
@@ -29,6 +30,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (srclen);
 }
+
 // int main() {
 //     char destination[10] = "you";
 //     const char *source = "to to toto toto";
