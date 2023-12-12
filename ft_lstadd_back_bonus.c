@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skwon2 <skwon2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/10 11:28:16 by skwon2            #+#    #+#             */
-/*   Updated: 2023/12/11 15:25:12 by skwon2           ###   ########.fr       */
+/*   Created: 2023/12/12 15:32:19 by skwon2            #+#    #+#             */
+/*   Updated: 2023/12/12 15:59:59 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-t_list	*ft_lstnew(void *content)
+void    ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*new;
-
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+    if (!lst || !new) //lst는 **lst의 주소가 NULL인가
+        return ;
+    if (!(*lst)) //lst가 가르키는 주소에 있는 값이 NULL -> lst->next를 말한다. 맨뒤로 보내줘야하기때문에 해준다.
+        *lst = new;
+    else
+    {
+        
+    }
 }
 
-// int main(void)
-// {
-// 	char	*content = "hello";
-// 	t_list  *c = ft_lstnew(content);
-// 	printf("%s\n", c->content);
-// 	free(c);
-// 	return 0;
-// }
+int main(void)
+{
+    
+    return 0;
+}
