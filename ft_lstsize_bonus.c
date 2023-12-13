@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skwon2 <skwon2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 16:01:25 by skwon2            #+#    #+#             */
-/*   Updated: 2023/12/12 16:58:39 by skwon2           ###   ########.fr       */
+/*   Updated: 2023/12/13 15:37:42 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 int	ft_lstsize(t_list *lst)
 {
@@ -55,5 +56,8 @@ int	ft_lstsize(t_list *lst)
 //     }
 // 	//printf("%d\n", ft_lstsize(lst)); // 밑에하면 0이 나옴 이미 끝까지가서
 //     printf("\n");
+//	free(lst);
+//	free(new1);
+//	free(new2);
 //     return 0;	
 // }

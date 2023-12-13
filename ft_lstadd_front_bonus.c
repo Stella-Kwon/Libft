@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skwon2 <skwon2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 14:37:12 by skwon2            #+#    #+#             */
-/*   Updated: 2023/12/12 15:58:48 by skwon2           ###   ########.fr       */
+/*   Updated: 2023/12/13 15:36:17 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 //         lst = lst->next; // NULL이 되면 멈추겠지
 //     }
 //     printf("\n");
+// 	free(lst);
+// 	free(new);
 //     return (0);
 // }

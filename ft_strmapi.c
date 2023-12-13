@@ -6,18 +6,18 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 12:44:10 by sukwon            #+#    #+#             */
-/*   Updated: 2023/12/08 13:29:51 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/13 11:47:44 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char function(unsigned int i, char c)
-{
-	c += i;
-	return (c);
-}
+// char function(unsigned int i, char c)
+// {
+// 	c += i;
+// 	return (c);
+// }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

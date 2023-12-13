@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skwon2 <skwon2@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:01:21 by skwon2            #+#    #+#             */
-/*   Updated: 2023/12/12 18:52:12 by skwon2           ###   ########.fr       */
+/*   Updated: 2023/12/13 15:36:54 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 t_list	*ft_lstlast(t_list *lst)
 {
@@ -36,5 +37,7 @@ t_list	*ft_lstlast(t_list *lst)
 // 	printf("\n");
 // 	printf("%s\n",res->content);
 // 	printf("\n");
+// 	free(lst);
+// 	free(new);
 // 	return(0);
 // }
