@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 12:44:10 by sukwon            #+#    #+#             */
-/*   Updated: 2023/12/13 11:47:44 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/13 17:00:21 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (res);
 }
 
-int	main(void)
-{
-	char const *s = "HELLO";
-	printf("%s\n", ft_strmapi(s,function));
-	return (0);
-}
+// int	main(void)
+// {
+// 	char const *s = "HELLO";
+// 	printf("%s\n", ft_strmapi(s,function));
+// 	return (0);
+// }
