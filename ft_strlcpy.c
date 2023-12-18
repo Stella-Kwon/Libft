@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 18:14:49 by sukwon            #+#    #+#             */
-/*   Updated: 2023/12/02 13:03:23 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/15 11:54:43 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	if (dstsize == 0)
 		return (srclen);
-	while (i < dstsize - 1 && *src)
+	while (i < (dstsize - 1) && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;

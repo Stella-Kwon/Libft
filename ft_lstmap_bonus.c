@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:34:14 by sukwon            #+#    #+#             */
-/*   Updated: 2023/12/14 18:31:32 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/18 22:29:44 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,20 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	// head를 시작주소하기 위해 먼저 하나 만들어주기
 	head = ft_lstnew(f(lst->content));
 	if (!head)
-	{
-		ft_lstclear(&lst,del);
 		return (NULL);
-	}
 	new = head;
-	// new->next = lst->next;
-	// lst = lst->next;
+	// new = lst->next;
+	lst = lst->next;
 	while (lst)
 	{
 		//25줄을 줄이기 위해 if()안에다가 실행시키면 일단실행된후에 값이 NULL이면 블록안에 있는 ft_lstclear가 실행될것이다.
 		if( !(new->next = ft_lstnew(f(lst->content))))
 		{
-			ft_lstclear(&lst, del);
-			return (NULL);			
+			ft_lstclear(&head, del);
+			return (NULL);
+			// break;			
 		}
-		new->next = lst->next;	
+		new = new->next;	
 		lst = lst->next;
 	}
 	return (head); 

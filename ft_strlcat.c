@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:38:31 by sukwon            #+#    #+#             */
-/*   Updated: 2023/12/01 11:12:43 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/18 23:41:20 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,50 +15,22 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
-	size_t	dstlen;
-	size_t	srclen;
+	unsigned int	i;
+	unsigned int	dstlen;
+	unsigned int	srclen;
 
-	i = 0;
-	dstlen = ft_strlen(dst);
 	srclen = ft_strlen(src);
-	// printf("sizeof(dst) : %lu\n", sizeof(dst));
 	if (dstsize == 0)
 		return (srclen);
-	if (dstsize < dstlen -1)
-		return (srclen + dstsize);
-	if (dstsize >= dstlen -1)
-	{
-		while (i < (dstsize - dstlen - 1))
-		{
-			dst[dstlen + i] = src[i];
-			i++;
-		}
-	}
-	dst[dstlen + i] = '\0';
+	dstlen = ft_strlen(dst);
+	if (dstlen >= dstsize)
+		return (dstsize + srclen);
+	i = -1;
+	while (src[++i] && i < (dstsize - dstlen - 1))
+		dst[i + dstlen] = src[i];
+	dst[i + dstlen] = '\0';
 	return (dstlen + srclen);
 }
-
-// size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
-// {
-// 	size_t	dstlen;
-// 	size_t	srclen;
-
-// 	srclen = ft_strlen(src);
-// 	if (dstsize == 0)
-// 		return (srclen);
-// 	dstlen = ft_strlen(dst);
-// 	if (dstlen >= dstsize)
-// 		return (dstsize + srclen);
-// 	if (srclen < dstsize - dstlen)
-// 		ft_memcpy(dst + dstlen, src, srclen + 1);
-// 	else if (srclen >= dstsize - dstlen)
-// 	{
-// 		ft_memcpy(dst + dstlen, src, dstsize - dstlen - 1);
-// 	}
-// 	*(dst + dstsize - 1) = '\0';
-// 	return (dstlen + srclen);
-// }
 
 // int main() {
 // 	char destination[20] = "hello, ";

@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 13:25:20 by suminkwon         #+#    #+#             */
-/*   Updated: 2023/11/30 11:33:17 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/14 18:43:45 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ void	*ft_calloc(size_t count, size_t size)
 	return (ptr);
 }
 
-int	main(void)
-{
-	size_t	num_e;
-	size_t	size_e;
-	int	*arr;
+// int	main(void)
+// {
+// 	size_t	num_e;
+// 	size_t	size_e;
+// 	int	*arr;
 
-	num_e = 5;
-	size_e = sizeof(int);
-	arr = (int *)calloc(num_e, size_e);
-	for (size_t i = 0; i < num_e; i++)
-		printf("%d ", arr[i]);
-	free(arr);
-	return (0);
-}
+// 	num_e = 5;
+// 	size_e = sizeof(int);
+// 	arr = (int *)calloc(num_e, size_e);
+// 	for (size_t i = 0; i < num_e; i++)
+// 		printf("%d ", arr[i]);
+// 	free(arr);
+// 	return (0);
+// }

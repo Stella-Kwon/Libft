@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:54:13 by skwon2            #+#    #+#             */
-/*   Updated: 2023/11/30 10:16:17 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/18 23:03:32 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,44 +15,45 @@
 
 static int	getmin(size_t	len, size_t	max)
 {
-	if (len > max)
-		return (max);
-	else
+	if (len < max)
 		return (len);
+	else
+		return (max);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*res;
-	size_t	i;
+	char			*res;
+	unsigned int	min;
+	unsigned int	slen;
+	unsigned int	i;
 
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s) - 1 || len == 0)
+	slen = ft_strlen(s);
+	if (slen <= start || len == 0)
 		return (ft_strdup(""));
-	len = getmin(len, ft_strlen(s) - start);
-	res = (char *)malloc(len + 1);
+	min = getmin(len, slen - start);
+	res = (char *)malloc(min + 1);
 	if (!res)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i < min)
 	{
-		res[i] = s[start];
-		i++;
-		start++;
+		res[i++] = s[start++];
 	}
 	res[i] = '\0';
 	return (res);
 }
 
-int main(void)
-{
-	// const char s[ 2147483647] = "ㄴㄴㄴ";	//stackoverflow error occur
-	const char *s = "hello";
-	unsigned int start = 2;
-	size_t len = 5;
-	char *res = ft_substr(s,start, len);
-	printf("\n\n%s",res);
-	free(res);
-	return 0;
-}
+// int main(void)
+// {
+// 	// const char s[ 2147483647] = "ㄴㄴㄴ";	//stackoverflow error occur
+// 	const char *s = "hello";
+// 	unsigned int start = 2;
+// 	size_t len = 5;
+// 	char *res = ft_substr(s,start, len);
+// 	printf("\n\n%s",res);
+// 	free(res);
+// 	return 0;
+// }

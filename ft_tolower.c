@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:12:17 by sukwon            #+#    #+#             */
-/*   Updated: 2023/11/28 11:18:27 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/14 18:46:24 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	ft_tolower(int c)
 	return (c);
 }
 
-int	main()
-{
-	int c = 'A';
-	printf("%c", ft_tolower(c));
-	return(0);
-}
+// int	main()
+// {
+// 	int c = 'A';
+// 	printf("%c", ft_tolower(c));
+// 	return(0);
+// }

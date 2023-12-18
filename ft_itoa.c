@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suminkwon <suminkwon@student.42.fr>        +#+  +:+       +#+        */
+/*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:09:22 by suminkwon         #+#    #+#             */
-/*   Updated: 2023/11/24 12:54:40 by suminkwon        ###   ########.fr       */
+/*   Updated: 2023/12/18 18:21:48 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ static int	length_count(int n)
 
 	i = 0;
 	if (n < 0)
-		i = 1;
-	n *= -1;
+	{
+		i++;
+		n *= -1;
+	}
 	while (n)
 	{
 		n /= 10;
@@ -28,40 +30,96 @@ static int	length_count(int n)
 	}
 	return (i);
 }
+static void	first_index(char **res, int n, int length)
+{ 
+	long long	nbr;
 
-char	*ft_itoa(int n)
-{
-	unsigned int	length;
-	unsigned int	nbr;
-	char			*res;
-
-	nbr = 0;
-	length = length_count(n);
-	res = (char *)malloc(length + 1);
-	if (!res)
-		return (0);
+	nbr = n;
 	if (n < 0)
-		nbr = n * -1;
-	res[length] = '\0';
-	while (nbr && length > 0)
+		nbr = nbr * -1;
+	(*res)[length] = '\0';
+	while (--length > 0)
 	{
-		res[length - 1] = (nbr % 10) + '0';
+		(*res)[length] = (nbr % 10) + '0';
 		nbr /= 10;
-		length--;
 	}
 	if (n < 0)
-		res[0] = '-';
+		(*res)[0] = '-';
 	else
-		res[0] = (nbr % 10);
+		(*res)[0] = (nbr % 10) + '0';
+}
+char	*ft_itoa(int n)
+{
+	
+	unsigned int	length;
+	char			*res;
+
+	if (n == 0)
+		return(ft_strdup("0"));
+	length = length_count(n);
+	res = (char *)malloc(length * sizeof(char) + 1);
+	if (!res)
+		return (NULL);
+	first_index(&res, n, length);
 	return (res);
 }
 
-int	main(void)
-{
-	int	c;
+// int	main(void)
+// {
+// 	int	c;
 
-	c = -232;
-	printf("%d\n", length_count(c));
-	printf("%s\n", ft_itoa(c));
-	return (0);
-}
+// 	c = -2147483647 -1; // min일때는 2147483647 보다 많은 2147483648 이라서 그렇기 떄문에 n을 그 이상 넘어가는 수에서는 사용할수없다.
+// 	printf("%d\n", length_count(c));
+// 	printf("%s\n", ft_itoa(c));
+// 	return (0);
+// }
+
+
+// static int	count_len(int n)
+// {
+// 	int	len;
+
+// 	len = 0;
+// 	if (n < 1)
+// 		len++;
+// 	while (n)
+// 	{
+// 		n /= 10;
+// 		len++;
+// 	}
+// 	return (len);
+// }
+
+// /**
+//  * Allocates (with malloc(3)) and returns a string
+//  * representing the integer received as an argument.
+//  * Negative numbers must be handled.
+//  */
+// char	*ft_itoa(int n)
+// {
+// 	long	nbr;
+// 	int		len;
+// 	char	*str;
+// 	int		i;
+
+// 	nbr = n;
+// 	len = count_len(nbr);
+// 	str = malloc((len + 1) * sizeof(char));
+// 	if (!str)
+// 		return (NULL);
+// 	str[len] = '\0';
+// 	if (nbr < 0)
+// 	{
+// 		str[0] = '-';
+// 		nbr = -nbr;
+// 	}
+// 	i = len - 1;
+// 	while (i >= 0 && nbr >= 0)
+// 	{
+// 		str[i--] = nbr % 10 + '0';
+// 		nbr /= 10;
+// 		if (nbr == 0)
+// 			break ;
+// 	}
+// 	return (str);
+// }
