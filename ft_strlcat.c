@@ -15,9 +15,8 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	i;
-	unsigned int	dstlen;
-	unsigned int	srclen;
+	size_t	dstlen;
+	size_t	srclen;
 
 	srclen = ft_strlen(src);
 	if (dstsize == 0)
@@ -25,12 +24,37 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dstlen = ft_strlen(dst);
 	if (dstlen >= dstsize)
 		return (dstsize + srclen);
-	i = -1;
-	while (src[++i] && i < (dstsize - dstlen - 1))
-		dst[i + dstlen] = src[i];
-	dst[i + dstlen] = '\0';
+	if (srclen < dstsize - dstlen)
+	{
+		ft_memcpy(dst + dstlen, src, srclen + 1);
+		*(dst + srclen + dstlen) = '\0';
+	}
+	else
+	{
+		ft_memcpy(dst + dstlen, src, dstsize - dstlen);
+		*(dst + dstsize - 1) = '\0';
+	}
 	return (dstlen + srclen);
 }
+
+// size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+// {
+// 	unsigned int	i;
+// 	unsigned int	dstlen;
+// 	unsigned int	srclen;
+
+// 	srclen = ft_strlen(src);
+// 	if (dstsize == 0)
+// 		return (srclen);
+// 	dstlen = ft_strlen(dst);
+// 	if (dstlen >= dstsize)
+// 		return (dstsize + srclen);
+// 	i = -1;
+// 	while (src[++i] && i < (dstsize - dstlen - 1))
+// 		dst[i + dstlen] = src[i];
+// 	dst[i + dstlen] = '\0';
+// 	return (dstlen + srclen);
+// }
 
 // int main() {
 // 	char destination[20] = "hello, ";
