@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:34:14 by sukwon            #+#    #+#             */
-/*   Updated: 2023/12/18 22:29:44 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/19 11:34:39 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new = new->next;	
 		lst = lst->next;
 	}
+	new->next = NULL;
 	return (head); 
 }
 
