@@ -59,7 +59,9 @@ $(NAME):
 		gcc $(FLAGS) $(INCLUDES) $(SRCS)
 		ar rcs $(NAME) $(OBJS)
 
-bonus: 
+bonus: $(OBJS_BONUS)
+		
+$(OBJS_BONUS):
 		gcc $(FLAGS) $(INCLUDES) $(SRCS_BONUS)
 		ar rcs $(NAME) $(OBJS_BONUS)
 
