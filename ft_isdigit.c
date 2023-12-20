@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:12:03 by skwon2            #+#    #+#             */
-/*   Updated: 2023/11/27 11:37:27 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/19 11:41:36 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,3 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
-
-// int main(void)
-// {
-//     printf("is it a digit number character? if not return 0 : %d ", ft_isdigit('5'));
-//     printf("is it a digit number character? if not return 0 : %d ", ft_isdigit(0));
-//     return 0;
-// }

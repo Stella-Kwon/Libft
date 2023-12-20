@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 10:48:10 by sukwon            #+#    #+#             */
-/*   Updated: 2023/12/15 12:52:32 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/20 10:30:12 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!res)
 		return (NULL);
 	ft_strlcpy(res, s1, s1_len + 1);
-	// ft_strlcat(res, s2, sizeof(res));
 	ft_strlcat(res, s2, s1_len + s2_len + 1);
 	return (res);
 }
-
-// int	main(void)
-// {
-// 	char const *s1 = "Hello, ";
-// 	char const *s2 = "World!";
-// 	char *res = ft_strjoin(s1, s2);
-// 	printf("%s\n", res);
-// 	free(res);
-// 	return (0);
-// }

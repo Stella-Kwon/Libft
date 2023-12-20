@@ -6,24 +6,11 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:21:15 by sukwon            #+#    #+#             */
-/*   Updated: 2023/12/15 11:23:16 by sukwon           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 17:07:08 by sukwon            #+#    #+#             */
-/*   Updated: 2022/11/06 17:30:17 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/19 11:41:25 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
 
 int	ft_isascii(int c)
 {
@@ -31,16 +18,3 @@ int	ft_isascii(int c)
 		return (1);
 	return (0);
 }
-
-// int main(void)
-// {
-//     int c ;
-//     c = 135;
-//     char v;
-//     v = 'a';
-//     printf("%d", ft_isascii(c));
-//     printf("%d", ft_isascii(v));
-//     printf("%d", isascii(c));
-//     printf("%d", isascii(v));
-//     return(0);
-// }

@@ -6,7 +6,7 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:44:33 by sukwon            #+#    #+#             */
-/*   Updated: 2023/12/18 17:06:47 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/20 10:25:52 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static size_t	count_words(char *str, char c)
 {
-	size_t  i;
+	size_t	i;
 
 	i = 0;
 	while (*str)
@@ -34,7 +34,7 @@ static size_t	count_words(char *str, char c)
 
 static size_t	get_each_strlen(char **str, char c)
 {
-	size_t  i;
+	size_t	i;
 
 	i = 0;
 	while (**str && **str == c)
@@ -50,7 +50,7 @@ static size_t	get_each_strlen(char **str, char c)
 
 static char	**all_free(char **res)
 {
-	int     i;
+	int	i;
 
 	i = 0;
 	while (res[i])
@@ -66,22 +66,22 @@ static char	**all_free(char **res)
 
 static char	**get_res(char *str, char c)
 {
-	char    **res;
-	size_t  each_strlen;
-	size_t  i;
-	size_t  res_len;
+	char	**res;
+	size_t	each_strlen;
+	size_t	i;
+	size_t	res_len;
 
 	res_len = count_words(str, c);
 	res = (char **)malloc((res_len + 1) * sizeof(char *));
 	if (!res)
-			return (NULL);
+		return (NULL);
 	i = 0;
 	while (i < res_len)
 	{
 		each_strlen = get_each_strlen(&str, c);
 		res[i] = (char *)malloc((each_strlen + 1) * sizeof(char));
 		if (!res[i])
-				return (all_free(res));
+			return (all_free(res));
 		ft_strlcpy(res[i], str, each_strlen + 1);
 		str += each_strlen;
 		i++;
@@ -92,8 +92,8 @@ static char	**get_res(char *str, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char    **res;
-	char    *str;
+	char	**res;
+	char	*str;
 
 	if (!s)
 		return (NULL);
@@ -101,14 +101,3 @@ char	**ft_split(char const *s, char c)
 	res = get_res(str, c);
 	return (res);
 }
-
-// int	main(void)
-// {
-// 	char const *s = "\0aa\0bbb";
-// 	char c = '\0';
-// 	char **res = ft_split(s, c);
-// 	for (int i = 0; res[i] != NULL; i++)
-// 			printf("res[%d]: %s\n", i, res[i]);
-// 	free(res);
-// 	return (0);
-// }
