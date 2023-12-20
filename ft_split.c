@@ -38,7 +38,7 @@ static size_t	get_each_strlen(char **str, char c)
 
 	i = 0;
 	while (**str && **str == c)
-			(*str)++;
+		(*str)++;
 	while ((*str)[i])
 	{
 		if ((*str)[i] == c)
