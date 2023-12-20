@@ -512,6 +512,9 @@ a.out.dSYM/
 m
 m.dSYM/
 
+#library.a
+libft.a.BA5EUj
+
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
