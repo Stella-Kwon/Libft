@@ -6,13 +6,11 @@
 /*   By: sukwon <sukwon@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 13:59:05 by skwon2            #+#    #+#             */
-/*   Updated: 2023/11/27 11:41:16 by sukwon           ###   ########.fr       */
+/*   Updated: 2023/12/20 11:44:04 by sukwon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// #include <string.h>
 
 size_t	ft_strlen(const char *s)
 {
@@ -23,11 +21,3 @@ size_t	ft_strlen(const char *s)
 		c++;
 	return (c);
 }
-
-// int main(void)
-// {
-//     const char *s = " ";
-//     printf("the normal strlen : %lu \n", strlen(s));
-//     printf("My ft_strlen : %lu \n", ft_strlen(s));
-//     return (0);
-// }
