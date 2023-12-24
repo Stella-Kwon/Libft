@@ -50,8 +50,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 // 	if (dstlen >= dstsize)
 // 		return (dstsize + srclen);
 // 	i = -1;
-// 	while (src[++i] && i < (dstsize - dstlen - 1))
-// 		dst[i + dstlen] = src[i];
+// 	while (i < (dstsize - dstlen - 1) && src[I])
+    	{
+        	dst[i + dstlen] = src[i];
+       		i++;
+   	}
 // 	dst[i + dstlen] = '\0';
 // 	return (dstlen + srclen);
 // }
