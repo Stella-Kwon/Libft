@@ -47,7 +47,7 @@ static size_t	get_each_strlen(char **str, char c)
 	return (i);
 }
 
-static char	**all_free(char **res)
+static char	**all_free(char ***res)
 {
 	int i;
 	
@@ -80,7 +80,7 @@ static char	**get_res(char *str, char c)
 		each_strlen = get_each_strlen(&str, c);
 		res[i] = (char *)malloc((each_strlen + 1) * sizeof(char));
 		if (!res[i])
-			return (all_free(res));
+			return (all_free(&res));
 		ft_strlcpy(res[i], str, each_strlen + 1);
 		str += each_strlen;
 		i++;
