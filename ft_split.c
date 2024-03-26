@@ -49,17 +49,17 @@ static size_t	get_each_strlen(char **str, char c)
 
 static char	**all_free(char **res)
 {
-	int	i;
-
+	int i;
+	
 	i = 0;
-	while (res[i])
+	while ((*res)[i])
 	{
-		free(res[i]);
-		res[i] = NULL;
-		i++;
+	free((*res)[i]);
+	(*res)[i] = NULL;
+	i++;
 	}
-	free(res);
-	res = NULL;
+	free(*res);
+	*res = NULL;
 	return (NULL);
 }
 
