@@ -6,7 +6,7 @@
 /*   By: skwon2 <skwon2@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 13:02:16 by suminkwon         #+#    #+#             */
-/*   Updated: 2023/12/22 13:11:02 by skwon2           ###   ########.fr       */
+/*   Updated: 2024/03/27 18:12:23 by skwon2           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}t_list;
+}					t_list;
 
 size_t	ft_strlen(const char *s);
 int		ft_isascii(int c);
