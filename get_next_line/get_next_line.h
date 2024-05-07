@@ -17,7 +17,7 @@
 #  define BUFFER_SIZE 1
 # endif
 
-# include "libft.h"
+# include "../libft.h"
 # include <limits.h>
 
 char	*get_next_line(int fd);
